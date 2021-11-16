@@ -11,7 +11,7 @@
 		private $_userAccessToken = 'IGQVJVRDJOR0hjZA2ZAQTU9ZAZAzk3ek1KRm1FZAmFxYjFoOTVxa2U0bWt6STRRT0sxVG5WUDJnQmdXYVo5clRCVkkwN0FYUWNvclBqT01qNkhtWVhKbjVxcnNiUmFNYmtPTnRKQ2EtdmtSMHU0cDRNc1lINQZDZD';
 		private $_userAccessTokenExpires = '';
 
-		public $authorizationUrl = '';
+		public $authorizationUrl = 'https://imagemapi.herokuapp.com/';
 		public $hasUserAccessToken = false;
 		public $userId = '437166211155889';
 
