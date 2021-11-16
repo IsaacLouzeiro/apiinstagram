@@ -5,7 +5,7 @@
 		private $_appId = INSTAGRAM_APP_ID;
 		private $_appSecret = INSTAGRAM_APP_SECRET;
 		private $_redirectUrl = INSTAGRAM_APP_REDIRECT_URI;
-		private $_getCode = '';
+		private $_getCode = 'AQALEee10MiVJUfiYNuvpsFt4A2FLBwmWZU3V_LfMEVoeaT6bxLaET6lUGXF5yvUH4Wkr0EG7PcTz7vA_lucWXlBmWkZxgfTxpUhM9EeFyQ8CF-jXv-W269eSA9K6htlbQG40WY1fHwu0OiXFHCyA7Ixf4rq9MeSOHYV3RuSml0ld8L6_eXMof05hnhBDYbYDHr8eJ2ayBwXYn-RVgM0_1GcnAusl_8f6SxPGHXSy0K6Yg';
 		private $_apiBaseUrl = 'https://api.instagram.com/';
 		private $_graphBaseUrl = 'https://graph.instagram.com/';
 		private $_userAccessToken = 'IGQVJVRDJOR0hjZA2ZAQTU9ZAZAzk3ek1KRm1FZAmFxYjFoOTVxa2U0bWt6STRRT0sxVG5WUDJnQmdXYVo5clRCVkkwN0FYUWNvclBqT01qNkhtWVhKbjVxcnNiUmFNYmtPTnRKQ2EtdmtSMHU0cDRNc1lINQZDZD';
