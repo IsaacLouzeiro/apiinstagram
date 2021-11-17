@@ -1,12 +1,12 @@
 <?php
 	require_once( 'instagram_basic_display_api.php' );
 
-	$accessToken = 'IGQVJVRDJOR0hjZA2ZAQTU9ZAZAzk3ek1KRm1FZAmFxYjFoOTVxa2U0bWt6STRRT0sxVG5WUDJnQmdXYVo5clRCVkkwN0FYUWNvclBqT01qNkhtWVhKbjVxcnNiUmFNYmtPTnRKQ2EtdmtSMHU0cDRNc1lINQZDZD';
+	$accessToken = 'ACCESS-TOKEN';
 
 	$params = array(
 		'get_code' => isset( $_GET['code'] ) ? $_GET['code'] : '',
 		'access_token' => $accessToken,
-		'user_id' => '437166211155889'
+		'user_id' => 'USER-ID'
 	);
 	$ig = new instagram_basic_display_api( $params );
 ?>
