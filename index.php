@@ -1,138 +1,26 @@
-<?php
-	require_once( 'instagram_basic_display_api.php' );
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	$accessToken = 'ACCESS-TOKEN';
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-	$params = array(
-		'get_code' => isset( $_GET['code'] ) ? $_GET['code'] : '',
-		'access_token' => $accessToken,
-		'user_id' => 'USER-ID'
-	);
-	$ig = new instagram_basic_display_api( $params );
-?>
-<meta charset="utf-8">
-<h1>Instagram Basic Display API</h1>
-<hr />
-<?php if ( $ig->hasUserAccessToken ) : ?>
-	<h4>IG Info</h4>
-	<hr />
-	<?php $user = $ig->getUser(); ?>
-	<pre>
-		<?php print_r( $user ); ?>
-	</pre>
-	<h1>Username: <?php echo $user['username']; ?></h1>
-	<h2>IG ID: <?php echo $user['id']; ?></h2>
-	<h3>Media Count: <?php echo $user['media_count']; ?></h3>
-	<h4>Account Type: <?php echo $user['account_type']; ?></h4>
-	<hr />
-	<h3>Highlighted Post</h3>
-	<?php $highlightedPostId = 'MEDIA-ID'; ?>
-	<div>Media ID: <?php echo $highlightedPostId; ?></div>
-	<div>
-		<?php
-			$media = $ig->getMedia( $highlightedPostId );
-			$mediaChildren = $ig->getMediaChildren( $highlightedPostId );
-		?>
-		<h4>Raw Data</h4>
-		<textarea style="width:100%;height:400px;">
-			Media <?php print_r( $media ); ?>
-			Children <?php print_r( $mediaChildren ); ?>
-		</textarea>
-	</div>
-	<div style="margin-bottom:20px;margin-top:20px;border:3px solid #333">
-		<div>
-			<?php foreach ( $mediaChildren['data'] as $child ) : ?>
-				<?php if ( 'IMAGE' == $child['media_type'] ) : ?>
-					<img style="height:320px" src="<?php echo $child['media_url']; ?>" />
-				<?php else : ?>
-					<video height="240" width="320" controls>
-						<source src="<?php echo $child['media_url']; ?>">
-					</video>
-				<?php endif; ?>
-			<?php endforeach; ?>
-		</div>
-		<div>
-			<b>Caption: <?php echo $media['caption']; ?></b>
-		</div>
-		<div>
-			Posted by: <?php echo $media['username']; ?> at <?php echo $media['timestamp']; ?>
-		</div>
-		<div>
-			Link: <a href="<?php echo $media['permalink']; ?>" target="_blank"><?php echo $media['permalink']; ?></a>
-		</div>
-		<div>
-			ID: <?php echo $media['id']; ?>
-		</div>
-		<div>
-			Media Type: <?php echo $media['media_type']; ?>
-		</div>
-	</div>
-	<?php $usersMedia = $ig->getUsersMedia(); ?>
-	<h3>Users Media Page 1 (<?php echo count( $usersMedia['data'] ); ?>)</h3>
-	<h4>Raw Data</h4>
-	<textarea style="width:100%;height:400px;"><?php print_r( $usersMedia ); ?></textarea>
-	<h4>Posts</h4>
-	<ul style="list-style: none;margin:0px;padding:0px;">
-		<?php foreach ( $usersMedia['data'] as $post ) : ?>
-			<li style="margin-bottom:20px;border:3px solid #333">
-				<div>
-					<?php if ( 'IMAGE' == $post['media_type'] || 'CAROUSEL_ALBUM' == $post['media_type']) : ?>
-						<img style="height:320px" src="<?php echo $post['media_url']; ?>" />
-					<?php else : ?>
-						<video height="240" width="320" controls>
-							<source src="<?php echo $post['media_url']; ?>">
-						</video>
-					<?php endif; ?>
-				</div>
-				<div>
-					<b>Caption: <?php echo $post['caption']; ?></b>
-				</div>
-				<div>
-					ID: <?php echo $post['id']; ?>
-				</div>
-				<div>
-					Media Type: <?php echo $post['media_type']; ?>
-				</div>
-				<div>
-					Media URL: <?php echo $post['media_url']; ?>
-				</div>
-			</li>
-		<?php endforeach; ?>
-	</ul>
-	<?php $usersMediaNext = $ig->getPaging( $usersMedia['paging']['next'] ); ?>
-	<h3>Users Media Page 2 (<?php echo count( $usersMediaNext['data'] ); ?>)</h3>
-	<h4>Raw Data</h4>
-	<textarea style="width:100%;height:400px;"><?php print_r( $usersMediaNext ); ?></textarea>
-	<h4>Posts</h4>
-	<ul style="list-style: none;margin:0px;padding:0px;">
-		<?php foreach ( $usersMediaNext['data'] as $post ) : ?>
-			<li style="margin-bottom:20px;border:3px solid #333">
-				<div>
-					<?php if ( 'IMAGE' == $post['media_type'] || 'CAROUSEL_ALBUM' == $post['media_type']) : ?>
-						<img style="height:320px" src="<?php echo $post['media_url']; ?>" />
-					<?php else : ?>
-						<video height="240" width="320" controls>
-							<source src="<?php echo $post['media_url']; ?>">
-						</video>
-					<?php endif; ?>
-				</div>
-				<div>
-					<b>Caption: <?php echo $post['caption']; ?></b>
-				</div>
-				<div>
-					ID: <?php echo $post['id']; ?>
-				</div>
-				<div>
-					Media Type: <?php echo $post['media_type']; ?>
-				</div>
-				<div>
-					Media URL: <?php echo $post['media_url']; ?>
-				</div>
-			</li>
-		<?php endforeach; ?>
-	</ul>
-<?php else : ?>
-	<a href="<?php echo $ig->authorizationUrl; ?>">
-		Authorize w/Instagram
-	</a>
-<?php endif; ?>
+  </head>
+  <body>
+      
+      
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      
+    <!-- javascript -->
+    <script src="js/script.js"></script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+</html>
