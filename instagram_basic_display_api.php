@@ -12,7 +12,7 @@
 		private $_userAccessTokenExpires = '';
 
 		public $authorizationUrl = 'https://imagemapi.herokuapp.com/';
-		public $hasUserAccessToken = false;
+		public $hasUserAccessToken = true;
 		public $userId = '437166211155889';
 
 		function __construct( $params ) {
