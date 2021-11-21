@@ -1,0 +1,190 @@
+// colors
+$color-text: #262626;
+$color-link: #8e8e8e;
+$color-linked: #00376b;
+$bg-color: #fafafa;
+
+body {
+    background-color: $bg-color;
+}
+
+// navbar
+nav.navbar {
+    div {
+        max-width: 975px;
+        margin: auto;
+
+        .nav {
+            .nav-item {
+                .nav-link {
+                    padding: 0 10px;
+                    color: $color-text;
+
+                    i {
+                        font-size: 1.4em;
+                    }
+                }
+
+                @media (max-width: 576px) {
+                    .nav-link {
+                        padding: 0 6px;
+                        color: $color-text;
+    
+                        i {
+                            font-size: 1.2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// main
+#main {
+    max-width: 975px;
+    padding: 30px 20px 0px;
+    margin: 0px auto 50px auto;
+
+    // about user content
+    .user-content {
+        margin-bottom: 44px;
+        color: $color-text;
+
+        // photo content
+        .photo-content {
+            div {
+                display: inline-block;
+                border-radius: 75px;
+                border: 2px solid;
+                width: 150px;
+                height: 150px;
+
+                @media screen and (max-width: 768px) {
+                    width: 77px;
+                    height: 77px;
+                }
+            }
+        }
+
+        // name and conf 
+        .nav-nameConf {
+
+            .btn {
+                border: 1px solid $color-link;
+                font-weight: bold;
+                color: $color-text;
+            }
+
+            .nav-item {
+                margin: 0 10px;
+                
+                .nav-link {
+                    color: $color-text;
+                    padding: 0;
+
+                    i {
+                        font-size: 1.5em;
+                    }
+                }
+            }
+        }
+
+        // publications followers following
+        .nav-pff {
+            .nav-item {
+                margin: 15px;
+                
+                .nav-link {
+                    color: $color-text;
+                    padding: 0;
+                }
+            }
+        }
+
+        // bio section
+        .bio {
+            a {
+                color: $color-linked;
+                text-decoration: none;
+            }
+        }
+    }
+
+    // bio section
+    .bio-mobile {
+        margin-top: -44px;
+        a {
+            color: $color-linked;
+            text-decoration: none;
+        }
+    }
+
+    // publications followers following
+    .nav-pff-mobile {
+        .nav-item {
+            margin: 15px;
+            text-align: center;
+            font-size: .9em;
+
+            strong {
+                display: block;
+                color: $color-text;
+            }
+            
+            .nav-link {
+                color: $color-link;
+                padding: 0;
+            }
+        }
+    }
+
+    // feed navigation content
+    .navigation-content {
+        .nav-item {
+            margin: 0 25px;
+            font-size: .8em;
+            
+            .nav-link {
+                color: $color-link;
+                padding: 15px 0;
+
+                i {
+                    margin-right: 5px;
+
+                    @media screen and (max-width: 768px) {
+                        font-size: 1.7em;
+                    }
+                }
+            }
+        }
+    }
+    
+    // footer
+    footer {
+        font-size: 12px;
+        color: $color-link;
+    
+        .nav {
+            justify-content: center;
+    
+            .nav-item {
+                margin: 10px;
+                .nav-link {
+                    padding: 0;
+                    color: $color-link;
+                }
+    
+                select {
+                    border: none;
+                    color: $color-link;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 20px 0px;
+    }
+}
+

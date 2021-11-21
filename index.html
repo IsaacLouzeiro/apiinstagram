@@ -9,13 +9,143 @@
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/add7a07cd1.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <h1>Pegando imagem direto do instagram</h1>
-    <h2>Utilizando a api do Facebook Developers</h2>
-    <div id="insta" class="border bg-dark">
+    <!-- nav content -->
+    <nav class="navbar navbar-light bg-white py-1 border sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand"><img width="103" src="img/2560px-Instagram_logo.webp" alt=""></a>
+        <small><input class="border px-2 d-sm-block d-none" type="search" placeholder="Pesquisar" aria-label="Search"></small>
 
+        <ul class="nav align-items-center">
+          <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-home"></i></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="fab fa-facebook-messenger"></i></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-compass"></i></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-heart-o"></i></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><div class="bg-dark border-secondary" style="width: 28px; height: 28px; border-radius: 15px; border: 2px solid;"></div></a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- // nav content -->
+
+    <!-- main content -->
+    <div id="main">
+      <!-- about user content -->
+      <section class="user-content row">
+        <!-- photo content -->
+        <div class="photo-content col-md-4 col-4 text-center">
+          <!-- <img class="bg-warning" style="border-radius: 75px;" src="" alt=""> -->
+          <div class="bg-dark border-secondary"></div>
+        </div>
+        <!-- // photo content -->
+        <!-- about content -->
+        <div class="about-content col-7 g-0">
+          <!-- name and config -->
+          <ul class="nav nav-nameConf d-flex align-items-center">
+            <li class="nav-item ms-0 mb-2 mb-md-0"><h3 class="fw-light">isaac.louzeiro</h3></li>
+            <li class="nav-item d-none d-md-inline-block"><a href="#" class="btn btn-sm">Editar perfil</a></li>
+            <li class="nav-item mb-2 mb-md-0"><a href="#" class="nav-link"><i class="fa fa-cog"></i></a></li>
+            <li class="nav-item m-0  d-md-none col-12 col-sm-10"><a href="#" class="btn btn-sm d-block">Editar perfil</a></li>
+          </ul>
+          <!-- // name and config -->
+          
+          <!-- publications followers following -->
+          <ul class="nav nav-pff align-items-center d-none d-md-flex">
+            <li class="nav-item ms-0"><a class="nav-link"><strong>1</strong> publicação</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><strong>230</strong> seguidores</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><strong>599</strong> seguindo</a></li>
+          </ul>
+          <!-- // publications followers following -->
+
+          <!-- bio section -->
+          <div class="bio d-none d-md-block">
+            <span>
+              <strong>Isaac Louzeiro</strong> <br>
+              👤 19y <br>
+              📌 São Paulo City <br>
+              <a class="fw-bold" href="https://wwww.isaaclouzeiro.github.io/portfolio" target="_blank">isaaclouzeiro.github.io/portfolio</a>
+            </span>
+          </div>
+          <!-- // bio section -->
+        </div>
+        <!-- // about content -->
+      </section>
+      <!-- // about user content -->
+
+      <!-- bio section -->
+      <div class="bio-mobile d-md-none d-block p-3">
+        <span>
+          <strong>Isaac Louzeiro</strong> <br>
+          👤 19y <br>
+          📌 São Paulo City <br>
+          <a class="fw-bold" href="https://wwww.isaaclouzeiro.github.io/portfolio" target="_blank">isaaclouzeiro.github.io/portfolio</a>
+        </span>
+      </div>
+      <!-- // bio section -->
+      <!-- publications followers following -->
+      <ul class="nav nav-pff-mobile d-md-none justify-content-around d-flex align-items-center border-top">
+        <li class="nav-item ms-0"><a class="nav-link"><strong>1</strong> publicação</a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><strong>230</strong> seguidores</a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><strong>599</strong> seguindo</a></li>
+      </ul>
+      <!-- // publications followers following -->
+
+      <!-- feed navigation content -->
+      <ul class="nav navigation-content justify-content-around justify-content-md-center border-top">
+        <li class="nav-item"><a href="#" class="nav-link border-top border-dark text-dark"><i class="fa fa-th"></i><span class="d-none d-md-inline-block"> PUBLICAÇÕES</span></a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-play-circle-o"></i><span class="d-none d-md-inline-block"> VIDEOS</span></a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-bookmark-o"></i><span class="d-none d-md-inline-block"> SALVOS</span></a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-user-tag"></i><span class="d-none d-md-inline-block"> MARCADOS</span></a></li>
+      </ul>
+      <!-- // feed navigation content -->
+      
+      <!-- content images from insta api -->
+      <div id="insta" class="row g-0 mb-2">
+      </div>
+      <!-- // content images from insta api -->
+  
+      <!-- footer content -->
+      <footer>
+        <!-- nav footer -->
+        <ul class="nav">
+          <li class="nav-item"><a href="#" class="nav-link">Meta</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Carreiras</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Ajuda</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">API</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Privacidade</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Termos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Principais contas</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Hashtags</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Localizações</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Instagram Lite</a></li>
+        </ul>
+        <!-- // nav footer -->
+
+        <!-- rights and lang -->
+        <ul class="nav">
+          <li class="nav-item">
+              <select name="language" id="lang">
+                <option value="pt">Português (Brasil)</option>
+                <option value="pt">Português (Portugal)</option>
+                <option value="pt">English</option>
+                <option value="pt">Español</option>
+                <option value="pt">Français</option>
+              </select>
+          </li>
+          <li class="nav-item">© 2021 Instagram from Meta</li>
+        </ul>
+        <!-- // rights and lang -->
+      </footer>
+      <!-- // footer content -->
     </div>
+    <!-- // main content -->
       
     <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

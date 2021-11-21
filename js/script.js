@@ -7,7 +7,7 @@ $(function(){
         // console.log('retorno: ', response.data);
 
         let dadosJson = response.data
-        let conteudo = '<h2 class="text-light text-center pt-3">TRABALHOS RECENTERS</h2><div class="row ps-2 pt-3 pb-4 mx-auto container justify-content-evenly">';
+        let conteudo = '';
 
         for (let p = 0; p < dadosJson.length; p++) {
             let feed = dadosJson[p];
@@ -17,7 +17,7 @@ $(function(){
                 conteudo += '<div class="col-12"><video controls><source src="'+feed.media_url+'" type="video/mp4"></video></div>';
             }
             else if(tipo === 'IMAGE') {
-                conteudo += '<div class="col-3"><img width="100%" src="'+feed.media_url+'" onclick="window.open(\''+feed.permalink+'\');" title="'+titulo+'" alt="'+titulo+'"></div>';
+                conteudo += '<div class="col-4"><img width="100%" src="'+feed.media_url+'" onclick="window.open(\''+feed.permalink+'\');" title="'+titulo+'" alt="'+titulo+'"></div>';
             }    
         }
 
