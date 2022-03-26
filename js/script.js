@@ -19,7 +19,10 @@ $(function(){
             }
             else if(tipo === 'IMAGE') {
                 conteudo += '<div class="col-4"><img width="100%" src="'+feed.media_url+'" onclick="window.open(\''+feed.permalink+'\');" title="'+titulo+'" alt="'+titulo+'"></div>';
-            }    
+            }
+            else if(tipo === 'CAROUSEL_ALBUM') {
+                conteudo += '<div class="col-4"><img width="100%" src="'+feed.media_url+'" onclick="window.open(\''+feed.permalink+'\');" title="'+titulo+'" alt="'+titulo+'"></div>';
+            } 
         }
 
         conteudo += '</div>';

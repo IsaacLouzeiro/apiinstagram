@@ -159,6 +159,22 @@ nav.navbar {
             }
         }
     }
+
+    #insta {
+        div {
+            img {
+                width: 90%;
+                height: 90%;
+                object-fit: cover;
+                object-position: center;
+
+                @media screen and (max-width: 768px) {
+                    width: 98%;
+                    height: 90%;
+                }
+            }
+        }
+    }
     
     // footer
     footer {
