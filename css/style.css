@@ -22,6 +22,17 @@ nav.navbar div .nav .nav-item .nav-link i {
     font-size: 1.2em;
   }
 }
+nav.navbar div .nav #userImage {
+  width: 28px;
+  height: 28px;
+  border-radius: 15px;
+  border: 2px solid;
+}
+
+.userImg {
+  background-image: url(../img/user.jpg);
+  background-size: cover;
+}
 
 #main {
   max-width: 975px;

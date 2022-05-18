@@ -36,8 +36,20 @@ nav.navbar {
                     }
                 }
             }
+
+            #userImage {
+                width: 28px; 
+                height: 28px; 
+                border-radius: 15px; 
+                border: 2px solid; 
+            }
         }
     }
+}
+
+.userImg {
+    background-image: url(../img/user.jpg);
+    background-size: cover;
 }
 
 // main
