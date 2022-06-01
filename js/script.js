@@ -1,6 +1,6 @@
 $(function(){
 
-    const token = "IGQVJXenMyeV9BZAkttM3VNdVRlQjRYU1RxdG1uNV8zeG54NllHYkFXRm9iUkotYzJVbnRfTjl1WkVXRWFrS2htOHMwU2xlWW5OVVlhb0hFTEhZAbkpZAa3A1OHY3cTZAmY3E5VEY5bnRYdjJ5X0RYNXd5dAZDZD";
+    const token = "IGQVJXYi1OY1VQVXllSjF2eUhUU2tjemFFd1ptMmlyUzNFN3FHTGpTdm05TnZAGUDFSbzZAHeDF0c3A5QVZAKamV4RWF5MTFnY1dhSm5JYndjNmpUMTdDSEhfckswaVJsQmhpOW5RQk9HOS1XY1BQMEZAEYgZDZD";
     const url = "https://graph.instagram.com/me/media?access_token="+token+"&fields=media_url,media_type,caption,permalink,username";
 
     $.get(url).then(function(response){
